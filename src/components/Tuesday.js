@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { memo } from 'react';
 
-function Tuesday({ data }) {
+function Tuesday({ data, updateTuesday }) {
   console.log('tuesday render lại');
-  const { value, updateTuesday } = data;
   return (
     <div>
-      <p>{value}</p>
-      <button onClick={() => updateTuesday()}>+</button>
+      <p>{data}</p>
+      <button onClick={updateTuesday}>+</button>
     </div>
   );
 }
 
-export default Tuesday;
+export default memo(Tuesday);

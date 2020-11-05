@@ -1,14 +1,13 @@
 import React from 'react';
 
-function Rerender({ data }) {
-  const { count, updateValue } = data;
+function Rerender({ data, updateValue }) {
   console.log('Được phép render đã render lại');
   return (
     <div className="rerender">
-      <p>{count}</p>
-      <button onClick={() => updateValue()}>Increment ++</button>
+      <p>{data}</p>
+      <button onClick={updateValue}>Increment ++</button>
     </div>
   );
 }
 
-export default Rerender;
+export default React.memo(Rerender);
